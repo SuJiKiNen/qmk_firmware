@@ -3,6 +3,7 @@
 *.eep
 *.elf
 *.hex
+*.bin
 !util/bootloader.hex
 !quantum/tools/eeprom_reset.hex
 *.log
