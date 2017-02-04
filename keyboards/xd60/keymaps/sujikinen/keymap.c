@@ -39,7 +39,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 void dance_fin (qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
-        register_code(KC_CAPS);
+        if timer_elapsed(state->time) > 150 {
+            set_oneshot_mods(MOD_LSFT);
+        }
     } else {
         if ( IS_LAYER_ON(QWERTY) ) {
             layer_move(DVORAK);
