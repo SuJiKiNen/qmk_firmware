@@ -12,6 +12,7 @@ enum kepmap_layout{
     QW = 0,
     DV,
     FN,
+    SY,
 };
 enum {
     TG_LY = 0,
@@ -21,12 +22,15 @@ enum macros{
     MACRO_BREATH_SPEED_INC,
     MACRO_BREATH_SPEED_DEC,
     MACRO_BREATH_DEFAULT,
+    MACRO_SYMBOL_LSFT_TAP,
+    MACRO_SYMBOL_RSFT_TAP,
 };
 #define M_BRTOG             M(MACRO_BREATH_TOGGLE)
 #define M_BSPDU             M(MACRO_BREATH_SPEED_INC)
 #define M_BSPDD             M(MACRO_BREATH_SPEED_DEC)
 #define M_BDFLT             M(MACRO_BREATH_DEFAULT)
-
+#define M_LSFT              M(MACRO_SYMBOL_LSFT_TAP)
+#define M_RSFT              M(MACRO_SYMBOL_RSFT_TAP)
 #define _______ KC_TRNS
 #define DU_ENT CTL_T(KC_ENT)
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -47,22 +51,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_ESC,    KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_MINS, KC_EQL, KC_BSPC,KC_GRV, \
             KC_TAB,    KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_LBRC, KC_RBRC,KC_BSLS,KC_DEL, \
             TD(TG_LY), KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,         DU_ENT ,KC_PGUP,\
-            KC_LSPO,   KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,         KC_RSPC,KC_UP  ,KC_PGDN,\
+            M_LSFT,    KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,         M_RSFT ,KC_UP  ,KC_PGDN,\
             KC_LCTL,   KC_LGUI,KC_LALT,                KC_SPC,                         KC_RALT,MO(FN), KC_RCTRL,KC_LEFT,KC_DOWN,KC_RGHT),
 
     [DV] = KEYMAP_ANSI(
             KC_ESC,    KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,   KC_0,   KC_LBRC, KC_RBRC,KC_BSPC,KC_GRV, \
             KC_TAB,    KC_QUOT,KC_COMM,KC_DOT, KC_P,   KC_Y,   KC_F,   KC_G,   KC_C,   KC_R,   KC_L,   KC_SLSH, KC_EQL ,KC_BSLS,KC_DEL, \
             TD(TG_LY), KC_A,   KC_O,   KC_E,   KC_U,   KC_I,   KC_D,   KC_H,   KC_T,   KC_N,   KC_S,   KC_MINS,         DU_ENT ,KC_PGUP,\
-            KC_LSPO,   KC_SCLN,KC_Q,   KC_J,   KC_K,   KC_X,   KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,            KC_RSPC,KC_UP  ,KC_PGDN,\
+            M_LSFT,    KC_SCLN,KC_Q,   KC_J,   KC_K,   KC_X,   KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,            M_RSFT,KC_UP  ,KC_PGDN,\
             KC_LCTL,   KC_LGUI,KC_LALT,                KC_SPC,                         KC_RALT,MO(FN), KC_RCTRL,KC_LEFT,KC_DOWN,KC_RGHT),
 
+
     [FN] = KEYMAP_ANSI(
-            _______,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F8,  KC_F9, KC_F10,KC_F11,  KC_F12,_______,\
-            _______,_______,  KC_UP,_______,_______,_______,_______,_______,_______,_______,_______, BL_DEC,BL_INC, BL_TOGG,BL_STEP,\
+            _______,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10,KC_F11,  KC_F12,_______,_______,\
+            _______,_______,  KC_UP,_______,_______,_______,_______,_______,_______,_______,_______, BL_DEC, BL_INC,BL_TOGG,BL_STEP,\
             _______,KC_LEFT,KC_DOWN,KC_RGHT,_______,_______,_______,_______,_______,_______,_______,_______,        M_BDFLT,_______,\
             _______,_______,_______,_______,_______,M_BRTOG,_______,_______,_______,_______,_______,        _______,M_BSPDU,_______,\
             _______,_______,_______,                _______,                        _______,_______,_______,_______,M_BSPDD,_______),
+    [SY] = KEYMAP_ANSI(
+            _______,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10,KC_F11,  KC_F12,_______,_______,\
+            _______,_______,_______,_______,KC_LPRN,_______,_______,KC_RPRN,_______,_______,_______,_______,_______,_______,_______,\
+            _______,_______,_______,_______,KC_LCBR,_______,_______,KC_RCBR,_______,_______,_______,_______,        _______,_______,\
+            _______,_______,_______,_______,KC_LBRC,_______,_______,KC_RBRC,_______,_______,_______,        _______,_______,_______,\
+            _______,_______,_______,                _______,                        _______,_______,_______,_______,_______,_______),
 };
 
 
@@ -115,9 +126,17 @@ void led_set_dv_indicator(void) {
 }
 void matrix_scan_user(void){
     led_set_dv_indicator();
+    if(is_oneshot_layer_active() && has_oneshot_layer_timed_out()){
+        layer_off(get_oneshot_layer());
+        reset_oneshot_layer();
+    }
 }
+//static bool shift_interrupted = false;
+static uint16_t lsft_pressed_time = 0;
+static uint16_t rsft_pressed_time = 0;
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
+    //uint8_t tap_count = record->tap.count;
     switch(id){
         case MACRO_BREATH_TOGGLE:
             if (record->event.pressed)
@@ -146,9 +165,56 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
                 breathing_defaults();
             }
             break;
+        case MACRO_SYMBOL_LSFT_TAP:
+            if (record->event.pressed) {
+                register_code16(KC_LSFT);
+                lsft_pressed_time = timer_read();
+            }else{
+                unregister_code16(KC_LSFT);
+                if (!record->tap.interrupted && timer_elapsed(lsft_pressed_time) < 200 ){
+                    set_oneshot_layer(SY, ONESHOT_START);
+                    clear_oneshot_layer_state(ONESHOT_PRESSED);
+                }
+                lsft_pressed_time = 0;
+            }
+            break;
+
+        case MACRO_SYMBOL_RSFT_TAP:
+            if (record->event.pressed) {
+                register_code16(KC_RSFT);
+                rsft_pressed_time = timer_read();
+            }else{
+                unregister_code16(KC_RSFT);
+                if (!record->tap.interrupted && timer_elapsed(rsft_pressed_time) < 200 ){
+                    set_oneshot_layer(SY, ONESHOT_START);
+                    clear_oneshot_layer_state(ONESHOT_PRESSED);
+                }
+                rsft_pressed_time = 0;
+            }
+            /*
+            if (record->event.pressed)
+            {
+                if (tap_count > 0 ) {
+                    layer_on( SY );
+                }else{
+                    register_code16(KC_LSFT);
+                }
+            }else{
+                if (tap_count > 0 ) {
+                    if (record->tap.interrupted) {
+                                record->tap.count = 0;
+                                layer_off( SY );
+                    }
+                }else{
+                    unregister_code16(KC_LSFT);
+                }
+            }
+            */
+            break;
     }
     return MACRO_NONE;
 }
+
 /*enum function_id {
 //SHIFT_ESC,
 };
