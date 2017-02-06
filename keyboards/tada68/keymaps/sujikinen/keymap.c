@@ -131,6 +131,9 @@ void matrix_scan_user(void){
         reset_oneshot_layer();
     }
 }
+void matrix_init_user(void){
+    led_set_dv_indicator();
+}
 //static bool shift_interrupted = false;
 static uint16_t lsft_pressed_time = 0;
 static uint16_t rsft_pressed_time = 0;
