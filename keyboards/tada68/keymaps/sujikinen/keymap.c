@@ -108,10 +108,6 @@ void led_set_dv_indicator(void) {
 }
 void matrix_scan_user(void){
     led_set_dv_indicator();
-    if(is_oneshot_layer_active() && has_oneshot_layer_timed_out()){
-        layer_off(get_oneshot_layer());
-        reset_oneshot_layer();
-    }
 }
 void matrix_init_user(void){
     led_set_dv_indicator();
