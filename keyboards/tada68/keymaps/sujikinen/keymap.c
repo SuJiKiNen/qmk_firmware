@@ -111,6 +111,7 @@ void matrix_scan_user(void){
 }
 void matrix_init_user(void){
     led_set_dv_indicator();
+    backlight_init_ports();
 }
 static bool lshift_interrupted = false;
 static bool rshift_interrupted = false;
@@ -137,28 +138,31 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
         case MACRO_BREATH_TOGGLE:
             if (record->event.pressed)
             {
-                breathing_toggle();
+//                breathing_toggle();
+                  pwm_led_toggle();
             }
             break;
 
         case MACRO_BREATH_SPEED_INC:
             if (record->event.pressed)
             {
-                breathing_speed_inc(1);
+                //breathing_speed_inc(1);
+                backlight_increase();
             }
             break;
 
         case MACRO_BREATH_SPEED_DEC:
             if (record->event.pressed)
             {
-                breathing_speed_dec(1);
+                //breathing_speed_dec(1);
+                backlight_decrease();
             }
             break;
 
         case MACRO_BREATH_DEFAULT:
             if (record->event.pressed)
             {
-                breathing_defaults();
+                //breathing_defaults();
             }
             break;
         // hold for shift,tap for one shot symbol layer
