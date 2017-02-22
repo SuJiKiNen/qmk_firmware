@@ -7,7 +7,7 @@ rev=$(git rev-parse --short HEAD)
 git config --global user.name "Travis CI"
 git config --global user.email "jack.humb+travis.ci@gmail.com"
 
-if [[ "$TRAVIS_BRANCH" == "master" ]] ; then
+if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == "false" ]] ; then
 
 increment_version ()
 {
@@ -41,7 +41,7 @@ if [[ "$TRAVIS_COMMIT_MESSAGE" != *"[skip build]"* ]] ; then
 	#rm -rf keyboard
 	#rm -rf keyboards
 	yes | cp -rf ../qmk_firmware/keyboards .
-	mkdir keyboards/ergodox_ez/
+	#mkdir keyboards/ergodox_ez/
 	cp ../qmk_firmware/util/ergodox_ez.html keyboards/ergodox_ez/index.html
 	cp ../qmk_firmware/readme.md qmk_readme.md
 	./generate.sh
