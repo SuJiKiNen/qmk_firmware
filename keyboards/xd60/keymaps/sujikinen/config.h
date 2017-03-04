@@ -4,6 +4,10 @@
 #include "../../config.h"
 #undef TAPPING_TERM
 #define TAPPING_TERM 230
+#undef ONESHOT_TIMEOUT
 #define ONESHOT_TIMEOUT 2000
+#define FORCE_NKRO
+#undef BACKLIGHT_LEVELS
+#define BACKLIGHT_LEVELS 7
 
 #endif
