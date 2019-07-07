@@ -8,8 +8,8 @@
 #define PRODUCT_ID      0x6060
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Barry
-#define PRODUCT         CA66
-#define DESCRIPTION     CA66
+#define PRODUCT         Lisp66
+#define DESCRIPTION     Lisp66
 
 /* key matrix size */
 #define MATRIX_ROWS 5
