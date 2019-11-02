@@ -24,6 +24,8 @@ webusb_pos_t webusb_keymap[] = {
 void matrix_init_user(void)
 {
     setPinOutput(D7);
+    setPinOutput(D2);
+    writePinLow(D2);
 }
 
 void led_set_kb(uint8_t usb_led) {
@@ -33,21 +35,4 @@ void led_set_kb(uint8_t usb_led) {
         writePinLow(D7);
     }
     led_set_user(usb_led);
-}
-
-void backlight_init_ports(void) {
-    // Set our LED pins as output
-    setPinOutput(D2);
-    // Set our LED pins low
-    writePinLow(D2);
-}
-
-void backlight_set(uint8_t level) {
-    if ( level == 0 ) {
-        // Turn off light
-        writePinLow(D2);
-    } else {
-        // Turn on light
-        writePinHigh(D2);
-    }
 }

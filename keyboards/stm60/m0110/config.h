@@ -53,10 +53,12 @@
 #define RGBLIGHT_VAL_STEP 8
 
 
-//#define BACKLIGHT_PIN D2
-//#ifdef BACKLIGHT_PIN
-#define BACKLIGHT_LEVELS 1
-//#endif
+#define BACKLIGHT_PIN D2
+#ifdef BACKLIGHT_PIN
+#define BACKLIGHT_ON_STATE 1
+#define BACKLIGHT_BREATHING
+#define BACKLIGHT_LEVELS 8
+#endif
 
 // tapping setting
 //#define TAPPING_TERM    200
