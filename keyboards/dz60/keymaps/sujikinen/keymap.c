@@ -37,22 +37,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL, KC_LGUI, KC_LALT, DU_SPC, DU_SPC, DU_SPC, TG(QW),  MO(BL),  KC_LEFT, KC_DOWN, KC_RIGHT
   ),
 	[QW] = KEYMAP_ARROW_3SPC_ISO(
-    KC_ESC,  KC_1,    KC_2,    KC_3,   KC_4,   KC_5,   KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,
-    DU_TAB,  KC_Q,    KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,
-    KC_LCTL, KC_A,    KC_S,    KC_D,   KC_F,   KC_G,   KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, DU_ENT,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,   KC_V,   KC_B,   KC_N,    KC_M,    KC_COMM, KC_DOT,  DU_RSFT1,KC_UP,   KC_DEL,
-    KC_LCTL, KC_LGUI, KC_LALT, DU_SPC, DU_SPC, DU_SPC, KC_TRNS, MO(BL),  KC_LEFT, KC_DOWN, KC_RIGHT
+    ______,  ______,  ______,  ______, ______, ______, ______,  ______,  ______,  ______,  ______,  KC_MINS, KC_EQL,   ______,
+    ______,  KC_Q,    KC_W,    KC_E,   KC_R,   KC_T,   KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC,  ______,
+    ______,  KC_A,    KC_S,    KC_D,   KC_F,   KC_G,   KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, DU_ENT,
+    ______,  KC_Z,    KC_X,    KC_C,   KC_V,   KC_B,   KC_N,    KC_M,    KC_COMM, KC_DOT,  DU_RSFT1,KC_UP,   KC_DEL,
+    ______,  ______,  ______,  ______, ______, ______, ______,  ______,  KC_LEFT, KC_DOWN, KC_RIGHT
   ),
 	[SY] = KEYMAP_ARROW_3SPC_ISO(
-    ______,  KC_F1,   KC_F2,   KC_F3,  KC_F4,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  ______,
-    ______,  ______,  KC_UP,   ______, KC_LPRN,KC_SLSH,KC_BSLS, KC_RPRN, ______,  ______,  ______,  ______,  ______,______,
+    ______,  KC_F1,   KC_F2,   KC_F3,  KC_F4,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,   ______,
+    ______,  KC_GRV, KC_UP,   ______, KC_LPRN,KC_SLSH,KC_BSLS, KC_RPRN, ______,  ______,  ______,  ______,  ______,   ______,
     KC_BSPC, KC_LEFT, KC_DOWN, KC_RGHT,KC_LCBR,KC_TILD,KC_PIPE, KC_RCBR, ______,  ______,  ______,  ______,  ______,
     ______,  ______,  ______,  ______, KC_LBRC,______, ______,  KC_RBRC, ______,  ______,  ______,  ______,  ______,
     ______,  ______,  ______,  ______, ______, ______, ______,  ______,  ______,  ______,  ______
   ),
 	[BL] = KEYMAP_ARROW_3SPC_ISO(
-    ______,  KC_F1,   KC_F2,   KC_F3,  KC_F4,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  ______,
-    ______,  BL_TOGG, BL_STEP, BL_INC, BL_INC, ______, ______,  ______,  ______,  ______,  ______,  ______,  ______,______,
+    ______,  KC_F1,   KC_F2,   KC_F3,  KC_F4,  KC_F5,  KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,   ______,
+    ______,  BL_TOGG, BL_STEP, BL_INC, BL_DEC, ______, ______,  ______,  ______,  ______,  ______,  ______,  ______,   ______,
     ______,  RGB_TOG, RGB_MOD, RGB_HUI,RGB_HUD,RGB_SAI,RGB_SAD, RGB_VAI, RGB_VAD, ______,  ______,  ______,  ______,
     ______,  ______,  ______,  ______, ______, ______, ______,  ______,  ______,  ______,  ______,  ______,  ______,
     ______,  ______,  ______,  ______, ______, ______, ______,  ______,  ______,  ______,  ______
